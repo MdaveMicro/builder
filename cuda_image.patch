@@ -1,0 +1,24 @@
+From cc4f9b48850c3f66daa9679727f422ae59997c48 Mon Sep 17 00:00:00 2001
+From: v-mdave <v-mdave@microsoft.com>
+Date: Fri, 6 Sep 2024 11:10:31 -0700
+Subject: [PATCH] Commit
+
+---
+ manywheel/Dockerfile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/manywheel/Dockerfile b/manywheel/Dockerfile
+index 2c805ba..649d549 100644
+--- a/manywheel/Dockerfile
++++ b/manywheel/Dockerfile
+@@ -51,6 +51,7 @@ COPY manywheel/build_scripts /build_scripts
+ ADD ./common/install_cpython.sh /build_scripts/install_cpython.sh
+ RUN bash build_scripts/build.sh && rm -r build_scripts
+ 
++RUN pip install setuptools
+ FROM base as cuda
+ ARG BASE_CUDA_VERSION=10.2
+ # Install CUDA
+-- 
+2.45.1
+

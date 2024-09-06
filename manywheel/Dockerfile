@@ -51,6 +51,7 @@ COPY manywheel/build_scripts /build_scripts
 ADD ./common/install_cpython.sh /build_scripts/install_cpython.sh
 RUN bash build_scripts/build.sh && rm -r build_scripts
 
+RUN pip install setuptools
 FROM base as cuda
 ARG BASE_CUDA_VERSION=10.2
 # Install CUDA
